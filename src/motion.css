@@ -1,0 +1,414 @@
+:root {
+  --reveal-ease: cubic-bezier(0.12, 0.75, 0.4, 1);
+  --reveal-time: 1.3s;
+}
+
+/* Each line keeps its own mask; no section-sized fades or layout shifts. */
+.motion-line {
+  display: block;
+  overflow: visible;
+  clip-path: inset(0 -0.12em);
+  padding-block: 0 0.16em;
+  margin-block: 0 -0.16em;
+}
+.motion-line-inner {
+  display: block;
+  transform: translate3d(0, 0, 0);
+}
+.motion-ready [data-reveal="line"] > .motion-line-inner {
+  transform: translate3d(0, 115%, 0);
+}
+.motion-ready [data-reveal="line"].is-revealed > .motion-line-inner {
+  animation: mask-rise var(--reveal-time) var(--reveal-ease)
+    var(--reveal-delay, 0ms) both;
+}
+.motion-ready [data-reveal="fade"],
+.motion-ready [data-reveal="hero"] {
+  opacity: 0;
+  transform: translate3d(0, 25px, 0);
+}
+.motion-ready [data-reveal="hero"] {
+  transform: translate3d(0, 50px, 0);
+}
+.motion-ready [data-reveal="fade"].is-revealed {
+  animation: detail-arrive var(--reveal-time) var(--reveal-ease)
+    var(--reveal-delay, 0ms) both;
+}
+.motion-ready [data-reveal="hero"].is-revealed {
+  animation: hero-arrive var(--reveal-time) var(--reveal-ease)
+    var(--reveal-delay, 0ms) both;
+}
+@keyframes mask-rise {
+  from {
+    transform: translate3d(0, 115%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes detail-arrive {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hero-arrive {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.wordmark-word {
+  display: block;
+}
+.wordmark-word > .motion-line-inner {
+  display: flex;
+}
+.wordmark .letter {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  animation: none;
+}
+.hero-meta {
+  overflow: clip;
+}
+.hero {
+  position: relative;
+}
+.hero-statement {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  z-index: 1;
+  margin-top: -0.85em;
+  color: var(--ink);
+  pointer-events: none;
+}
+.hero-statement > .motion-line:first-child {
+  margin-left: -12%;
+}
+.hero-statement > .motion-line + .motion-line {
+  margin-left: 14%;
+}
+.hero-bottom {
+  z-index: 2;
+}
+.hero-shade {
+  background: linear-gradient(180deg, #00000016, transparent 45%, #f4f3ef36);
+}
+.about {
+  margin-top: 38px;
+}
+.about-title {
+  position: relative;
+  display: block;
+}
+.about-title > .section-label {
+  position: absolute;
+  top: 100%;
+  margin-top: 62px;
+}
+.about-title h2 {
+  width: 100%;
+  margin-left: 0;
+  font-size: clamp(40px, 7.8vw, 149px);
+  line-height: 0.96;
+}
+.about-title h2 > .motion-line:first-child {
+  text-align: left;
+}
+.about-title h2 > .motion-line:nth-child(2) {
+  text-align: center;
+}
+.about-title h2 > .motion-line:nth-child(3) {
+  text-align: right;
+  padding-right: 12%;
+}
+.about-title .small-note {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 68px;
+}
+.about-body {
+  margin-top: 86px;
+}
+
+/* Entrance zoom, scroll parallax and hover use separate transform layers. */
+.motion-image {
+  position: relative;
+  display: block;
+  overflow: clip;
+  background: #e4e2da;
+}
+.motion-image-crop {
+  display: block;
+  position: absolute;
+  inset: -30px 0;
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+}
+.motion-image-crop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.motion-ready [data-reveal="image"] .motion-image-crop img {
+  transform: scale(1.22);
+}
+.motion-ready [data-reveal="image"].is-revealed .motion-image-crop img {
+  animation: photo-settle var(--reveal-time) var(--reveal-ease)
+    var(--reveal-delay, 0ms) both;
+}
+@keyframes photo-settle {
+  from {
+    transform: scale(1.22);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.motion-image.is-in-view .motion-image-crop {
+  will-change: transform;
+}
+.about-photo > .motion-image {
+  height: 400px;
+}
+.about-copy > .motion-image {
+  height: 220px;
+  margin-bottom: 28px;
+}
+.about-photo .motion-image img {
+  height: 100%;
+}
+.project-image > .motion-image {
+  position: absolute;
+  inset: 0;
+}
+.project-image .motion-image img {
+  position: static;
+  transform: none;
+  transition: scale 0.7s var(--reveal-ease);
+}
+.project-image:hover .motion-image img {
+  transform: none;
+  scale: 1.045;
+}
+.journal-collage > .motion-image:first-child {
+  height: 310px;
+  width: 33%;
+}
+.journal-collage > .motion-image:last-child {
+  height: 265px;
+  width: 24%;
+  margin-top: 75px;
+}
+.journal-word {
+  left: -15%;
+  width: 130%;
+  mix-blend-mode: normal;
+  transform: translate3d(var(--scroll-x, 0px), 0, 0);
+  pointer-events: none;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: journal-marquee 30s linear infinite;
+  animation-play-state: paused;
+}
+.marquee-track > span {
+  flex-shrink: 0;
+}
+.journal-word.is-in-view .marquee-track {
+  animation-play-state: running;
+}
+.journal-collage:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes journal-marquee {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.other-pages {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+}
+.other-pages > .section-label {
+  margin-top: 12px;
+}
+.other-pages-link {
+  font-size: clamp(50px, 8vw, 150px);
+  font-weight: 450;
+  letter-spacing: -0.075em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.other-pages-link > svg {
+  width: 5vw;
+  height: 5vw;
+  transition: transform 0.5s var(--reveal-ease);
+}
+.other-pages-link:hover > svg {
+  transform: translate(5px, -5px);
+}
+.contact-title > .motion-line:first-child {
+  font-weight: 200;
+}
+.contact-title > .motion-line:nth-child(2) {
+  font-weight: 450;
+}
+.footer-wordmark > .motion-line {
+  min-width: 0;
+}
+.topbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s var(--reveal-ease);
+}
+.topbar nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.nav-dot {
+  display: none;
+}
+
+@media (min-width: 1600px) {
+  .about-photo > .motion-image {
+    height: 510px;
+  }
+  .about-copy > .motion-image {
+    height: 285px;
+  }
+}
+@media (max-width: 900px) {
+  .about {
+    margin-top: 30px;
+  }
+  .about-photo > .motion-image {
+    height: 320px;
+  }
+  .about-copy > .motion-image {
+    height: 160px;
+  }
+  .journal-collage > .motion-image:first-child {
+    height: 250px;
+  }
+  .journal-collage > .motion-image:last-child {
+    height: 215px;
+    margin-top: 55px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --reveal-time: 1s;
+  }
+  .hero-statement {
+    margin-top: -0.72em;
+    font-size: 10.1vw;
+  }
+  .hero-statement > .motion-line:first-child {
+    margin-left: 0;
+  }
+  .hero-statement > .motion-line + .motion-line {
+    margin-left: 3%;
+  }
+  .hero-bottom {
+    bottom: 75px;
+  }
+  .about {
+    margin-top: 27px;
+  }
+  .about-title h2 {
+    font-size: 10.5vw;
+  }
+  .about-title h2 > .motion-line:nth-child(3) {
+    padding-right: 5%;
+  }
+  .about-title > .section-label {
+    margin-top: 25px;
+  }
+  .about-body {
+    margin-top: 65px;
+  }
+  .about-photo > .motion-image {
+    height: 270px;
+  }
+  .about-copy > .motion-image {
+    height: 145px;
+    margin-bottom: 17px;
+  }
+  .motion-image-crop {
+    inset: -14px 0;
+  }
+  .journal-collage > .motion-image:first-child {
+    width: 43%;
+    height: 180px;
+  }
+  .journal-collage > .motion-image:last-child {
+    width: 29%;
+    height: 150px;
+    margin-top: 48px;
+  }
+  .other-pages {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .other-pages-link {
+    font-size: 14vw;
+  }
+  .other-pages-link > svg {
+    width: 9vw;
+    height: 9vw;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready [data-reveal],
+  .motion-ready [data-reveal="line"] > .motion-line-inner,
+  .motion-ready [data-reveal="image"] .motion-image-crop img {
+    opacity: 1;
+    transform: none;
+  }
+  .motion-image-crop {
+    transform: none;
+  }
+  .journal-word {
+    left: 0;
+    width: 100%;
+    transform: none;
+  }
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
+  .marquee-track > span + span {
+    display: none;
+  }
+}

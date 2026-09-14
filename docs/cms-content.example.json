@@ -1,0 +1,126 @@
+{
+  "studio": {
+    "name": "djiwaruang studio",
+    "email": "hello@djiwaruang.studio",
+    "location": "Indonesia",
+    "instagramUrl": ""
+  },
+  "hero": {
+    "eyebrow": "INTERIOR DESIGN & SPATIAL STORIES",
+    "media": {
+      "type": "image",
+      "src": "/images/hero.jpg",
+      "poster": "/images/hero.jpg",
+      "alt": "Ruang keluarga dengan material alami, sofa linen, dan cahaya matahari yang hangat"
+    },
+    "title": ["Thoughtful spaces.", "Meaningful living."],
+    "caption": "A quieter kind of beautiful."
+  },
+  "about": {
+    "heading": ["FOR THE WAY", "YOU LIVE, WORK", "& FEEL."],
+    "text": "Setiap ruang punya cerita. Kami menerjemahkan cerita Anda menjadi ruang yang terasa personal — melalui bentuk yang jujur, material yang alami, dan detail yang bermakna.",
+    "more": "Djiwaruang adalah studio desain interior yang mempertemukan estetika dan keseharian. Dari hunian yang menenangkan hingga ruang komersial yang berkarakter, kami merancang dengan mendengarkan, memahami, lalu memberi ruang bagi kehidupan untuk tumbuh.",
+    "images": [
+      {
+        "src": "/images/detail.jpg",
+        "alt": "Lampu dinding minimalis pada dinding berwarna hijau lembut"
+      },
+      {
+        "src": "/images/curtain.jpg",
+        "alt": "Cahaya lembut di ruang dengan palet warna hangat"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "rumah-sela",
+      "name": "RUMAH SELA",
+      "category": "Residential",
+      "location": "Jakarta",
+      "year": "2025",
+      "images": ["/images/living.jpg", "/images/bedroom.jpg"],
+      "description": "Sebuah jeda dari ritme kota. Palet warna hangat, tekstur kayu, dan cahaya alami membentuk rumah yang mengundang Anda untuk melambat."
+    },
+    {
+      "id": "temu-space",
+      "name": "TEMU SPACE",
+      "category": "Commercial",
+      "location": "Bandung",
+      "year": "2025",
+      "images": ["/images/cafe.jpg", "/images/dining.jpg"],
+      "description": "Ruang untuk bertemu dan berbagi cerita. Komposisi material alami dan sudut-sudut yang intim menghadirkan suasana yang akrab."
+    },
+    {
+      "id": "teduh-residence",
+      "name": "TEDUH RESIDENCE",
+      "category": "Residential",
+      "location": "Tangerang",
+      "year": "2024",
+      "images": ["/images/hero.jpg", "/images/detail.jpg"],
+      "description": "Ketenangan yang hadir dari hal-hal sederhana. Sebuah hunian dengan garis yang bersih, proporsi yang lapang, dan detail yang dipertimbangkan dengan hati-hati."
+    },
+    {
+      "id": "ruang-tumbuh",
+      "name": "RUANG TUMBUH",
+      "category": "Commercial",
+      "location": "Jakarta",
+      "year": "2024",
+      "images": ["/images/workspace.jpg"],
+      "description": "Tempat ide bertumbuh. Ruang kerja yang fleksibel dan terbuka, dirancang untuk mendukung kolaborasi sekaligus memberikan ruang untuk fokus."
+    },
+    {
+      "id": "senja-house",
+      "name": "SENJA HOUSE",
+      "category": "Residential",
+      "location": "Bali",
+      "year": "2024",
+      "images": ["/images/bedroom.jpg", "/images/living.jpg"],
+      "description": "Hunian yang mengikuti ritme cahaya. Material taktil dan warna bumi menghubungkan ruang istirahat dengan lanskap di sekitarnya."
+    },
+    {
+      "id": "antara",
+      "name": "ANTARA",
+      "category": "Commercial",
+      "location": "Yogyakarta",
+      "year": "2023",
+      "images": ["/images/dining.jpg", "/images/cafe.jpg"],
+      "description": "Sebuah ruang singgah yang hangat, mempertemukan pengalaman bersantap dengan kesederhanaan desain yang penuh perhatian."
+    }
+  ],
+  "journal": {
+    "title": "a little more soul.",
+    "caption": "BEAUTY LIVES IN THE DETAILS.",
+    "images": [
+      {
+        "src": "/images/curtain.jpg",
+        "alt": "Sudut interior dengan cahaya alami yang lembut"
+      },
+      {
+        "src": "/images/detail.jpg",
+        "alt": "Lampu dinding dan palet warna hijau lembut"
+      }
+    ]
+  },
+  "services": [
+    {
+      "title": "INTERIOR DESIGN",
+      "stage": "THE VISION",
+      "description": "Dari percakapan pertama hingga gambar kerja: konsep ruang, tata letak, visualisasi 3D, serta pemilihan material yang selaras dengan kebutuhan dan karakter Anda."
+    },
+    {
+      "title": "FURNITURE & STYLING",
+      "stage": "THE DETAILS",
+      "description": "Kurasi furnitur, pencahayaan, tekstil, dan objek yang memberi kepribadian pada ruang. Setiap pilihan dipertimbangkan untuk menghadirkan keseimbangan fungsi dan rasa."
+    },
+    {
+      "title": "DESIGN & BUILD",
+      "stage": "THE REALIZATION",
+      "description": "Mewujudkan desain melalui koordinasi pelaksanaan, pengadaan material, dan pengerjaan interior dengan perhatian pada kualitas serta detail."
+    },
+    {
+      "title": "PROJECT SUPERVISION",
+      "stage": "THE FINISHING TOUCH",
+      "description": "Pendampingan berkala di lapangan untuk memeriksa kesesuaian pelaksanaan dengan desain, mendiskusikan perkembangan, dan membantu menyelesaikan detail akhir."
+    }
+  ]
+}
