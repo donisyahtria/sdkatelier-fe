@@ -39,7 +39,15 @@ export const defaultContent = {
       category: "Residential",
       location: "Jakarta",
       year: "2025",
-      images: ["/images/living.jpg", "/images/bedroom.jpg"],
+      // First two photos are homepage previews; the popup displays the full gallery.
+      images: [
+        "/images/living.jpg",
+        "/images/bedroom.jpg",
+        "/images/hero.jpg",
+        "/images/dining.jpg",
+        "/images/curtain.jpg",
+        "/images/detail.jpg",
+      ],
       description:
         "Sebuah jeda dari ritme kota. Palet warna hangat, tekstur kayu, dan cahaya alami membentuk rumah yang mengundang Anda untuk melambat.",
     },

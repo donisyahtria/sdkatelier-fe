@@ -19,7 +19,9 @@ npm run preview
 ## Konten dan komponen
 
 - `src/data/content.js`: seluruh contoh konten utama, alamat email, proyek, layanan, serta konfigurasi hero.
-- `src/App.jsx`: komponen Header, Hero, About, Projects, ProjectDialog, Services, Journal, dan Footer.
+- `src/App.jsx`: komponen Header, Hero, About, Projects, Services, Journal, dan Footer.
+- `src/components/ProjectDialog.jsx`: popup galeri proyek, navigasi thumbnail/keyboard, dan swipe.
+- `src/project-gallery.css`: layout galeri desktop dan popup layar penuh di mobile.
 - `src/lib/content.js`: pembacaan dan validasi konten dari API CMS, dengan konten lokal sebagai fallback.
 - `src/styles.css`: layout responsif.
 - `src/components/Motion.jsx`: komponen mask teks dan lapisan gambar.
@@ -49,6 +51,14 @@ Hero default menggunakan foto dengan gerakan zoom/pan halus. Tombol pause/play m
 Video memakai `muted`, `loop`, dan `playsInline`. Autoplay mengikuti kebijakan browser dan preferensi mengurangi gerakan. Jika autoplay diblokir, tersedia tombol play. Jika video gagal dimuat, halaman menampilkan poster.
 
 Untuk GIF gunakan `type: 'gif'` dan `src: '/media/studio.gif'`. Sertakan `poster` berupa gambar diam: pause GIF dilakukan dengan menggantinya ke poster. Video MP4 lebih sesuai untuk media panjang. Tanpa poster, GIF yang dijeda menampilkan bidang diam.
+
+## Galeri proyek dalam popup
+
+`project.images` berisi semua foto galeri dalam urutan tampil. Homepage hanya mengambil dua foto pertama; menambahkan foto detail tidak menambah kolom di homepage. Rumah Sela memiliki enam foto contoh untuk mencoba galeri.
+
+Popup menampilkan satu foto besar tanpa memotong proporsi gambar, thumbnail horizontal, dan penanda posisi foto. Navigasi tersedia melalui tombol sebelumnya/berikutnya, tombol keyboard kiri/kanan, thumbnail, dan swipe horizontal pada layar sentuh. Setelah foto terakhir, navigasi kembali ke foto pertama. Proyek dengan satu foto tidak menampilkan tombol navigasi atau thumbnail.
+
+Nama proyek dan tombol tutup tetap di atas saat popup digulir. Mobile memakai layar penuh; scroll vertikal dan pinch-zoom tetap tersedia. Tombol Escape menutup popup dan fokus kembali ke pemicunya. Membuka ulang proyek memulai dari foto pertama. Galeri juga menyediakan status saat gambar dimuat atau gagal dimuat.
 
 ## Menyambungkan CMS
 

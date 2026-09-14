@@ -13,11 +13,18 @@
       "poster": "/images/hero.jpg",
       "alt": "Ruang keluarga dengan material alami, sofa linen, dan cahaya matahari yang hangat"
     },
-    "title": ["Thoughtful spaces.", "Meaningful living."],
+    "title": [
+      "Thoughtful spaces.",
+      "Meaningful living."
+    ],
     "caption": "A quieter kind of beautiful."
   },
   "about": {
-    "heading": ["FOR THE WAY", "YOU LIVE, WORK", "& FEEL."],
+    "heading": [
+      "FOR THE WAY",
+      "YOU LIVE, WORK",
+      "& FEEL."
+    ],
     "text": "Setiap ruang punya cerita. Kami menerjemahkan cerita Anda menjadi ruang yang terasa personal — melalui bentuk yang jujur, material yang alami, dan detail yang bermakna.",
     "more": "Djiwaruang adalah studio desain interior yang mempertemukan estetika dan keseharian. Dari hunian yang menenangkan hingga ruang komersial yang berkarakter, kami merancang dengan mendengarkan, memahami, lalu memberi ruang bagi kehidupan untuk tumbuh.",
     "images": [
@@ -38,7 +45,14 @@
       "category": "Residential",
       "location": "Jakarta",
       "year": "2025",
-      "images": ["/images/living.jpg", "/images/bedroom.jpg"],
+      "images": [
+        "/images/living.jpg",
+        "/images/bedroom.jpg",
+        "/images/hero.jpg",
+        "/images/dining.jpg",
+        "/images/curtain.jpg",
+        "/images/detail.jpg"
+      ],
       "description": "Sebuah jeda dari ritme kota. Palet warna hangat, tekstur kayu, dan cahaya alami membentuk rumah yang mengundang Anda untuk melambat."
     },
     {
@@ -47,7 +61,10 @@
       "category": "Commercial",
       "location": "Bandung",
       "year": "2025",
-      "images": ["/images/cafe.jpg", "/images/dining.jpg"],
+      "images": [
+        "/images/cafe.jpg",
+        "/images/dining.jpg"
+      ],
       "description": "Ruang untuk bertemu dan berbagi cerita. Komposisi material alami dan sudut-sudut yang intim menghadirkan suasana yang akrab."
     },
     {
@@ -56,7 +73,10 @@
       "category": "Residential",
       "location": "Tangerang",
       "year": "2024",
-      "images": ["/images/hero.jpg", "/images/detail.jpg"],
+      "images": [
+        "/images/hero.jpg",
+        "/images/detail.jpg"
+      ],
       "description": "Ketenangan yang hadir dari hal-hal sederhana. Sebuah hunian dengan garis yang bersih, proporsi yang lapang, dan detail yang dipertimbangkan dengan hati-hati."
     },
     {
@@ -65,7 +85,9 @@
       "category": "Commercial",
       "location": "Jakarta",
       "year": "2024",
-      "images": ["/images/workspace.jpg"],
+      "images": [
+        "/images/workspace.jpg"
+      ],
       "description": "Tempat ide bertumbuh. Ruang kerja yang fleksibel dan terbuka, dirancang untuk mendukung kolaborasi sekaligus memberikan ruang untuk fokus."
     },
     {
@@ -74,7 +96,10 @@
       "category": "Residential",
       "location": "Bali",
       "year": "2024",
-      "images": ["/images/bedroom.jpg", "/images/living.jpg"],
+      "images": [
+        "/images/bedroom.jpg",
+        "/images/living.jpg"
+      ],
       "description": "Hunian yang mengikuti ritme cahaya. Material taktil dan warna bumi menghubungkan ruang istirahat dengan lanskap di sekitarnya."
     },
     {
@@ -83,7 +108,10 @@
       "category": "Commercial",
       "location": "Yogyakarta",
       "year": "2023",
-      "images": ["/images/dining.jpg", "/images/cafe.jpg"],
+      "images": [
+        "/images/dining.jpg",
+        "/images/cafe.jpg"
+      ],
       "description": "Sebuah ruang singgah yang hangat, mempertemukan pengalaman bersantap dengan kesederhanaan desain yang penuh perhatian."
     }
   ],

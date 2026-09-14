@@ -3,6 +3,7 @@ import { defaultContent } from "./data/content";
 import { getContent, isSafeUrl } from "./lib/content";
 import { RevealLine, MotionImage } from "./components/Motion";
 import { usePageMotion } from "./hooks/usePageMotion";
+import ProjectDialog from "./components/ProjectDialog";
 
 function Arrow({ diagonal = false, ...props }) {
   return (
@@ -238,70 +239,6 @@ function About({ about }) {
   );
 }
 
-function ProjectDialog({ project, onClose, email }) {
-  const ref = useRef(null);
-  useEffect(() => {
-    const dialog = ref.current;
-    if (!project) return;
-    dialog.showModal();
-    const oldOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      dialog.close();
-      document.body.style.overflow = oldOverflow;
-    };
-  }, [project]);
-  return (
-    <dialog
-      ref={ref}
-      className="project-dialog"
-      aria-labelledby="project-title"
-      onCancel={onClose}
-      onClick={(event) => {
-        if (event.target === ref.current) onClose();
-      }}
-    >
-      {project && (
-        <div className="dialog-content">
-          <div className="dialog-top">
-            <SectionLabel>
-              {project.category} / {project.year}
-            </SectionLabel>
-            <button
-              className="close-button"
-              onClick={onClose}
-              aria-label="Tutup detail proyek"
-            >
-              CLOSE <span>×</span>
-            </button>
-          </div>
-          <h2 id="project-title">{project.name}</h2>
-          <div className="dialog-description">
-            <span>{project.location}, Indonesia</span>
-            <p>{project.description}</p>
-          </div>
-          <div className="dialog-images">
-            {project.images.map((src, index) => (
-              <img
-                key={`${src}-${index}`}
-                src={src}
-                alt={`${project.name} — tampilan interior ${index + 1}`}
-              />
-            ))}
-          </div>
-          <a
-            className="pill-button"
-            href={`mailto:${email}?subject=${encodeURIComponent(`Diskusi proyek terinspirasi ${project.name}`)}`}
-          >
-            LET'S CREATE YOUR SPACE
-            <Arrow diagonal />
-          </a>
-        </div>
-      )}
-    </dialog>
-  );
-}
-
 function Projects({ projects, email }) {
   const [filter, setFilter] = useState("All");
   const [showAll, setShowAll] = useState(false);
@@ -375,7 +312,7 @@ function Projects({ projects, email }) {
                 EXPLORE PROJECT <Arrow diagonal />
               </span>
             </button>
-            {project.images.map((src, i) => (
+            {project.images.slice(0, 2).map((src, i) => (
               <button
                 className="project-image"
                 key={`${src}-${i}`}
@@ -403,11 +340,14 @@ function Projects({ projects, email }) {
           </button>
         </div>
       )}
-      <ProjectDialog
-        project={selected}
-        onClose={() => setSelected(null)}
-        email={email}
-      />
+      {selected && (
+        <ProjectDialog
+          key={selected.id}
+          project={selected}
+          onClose={() => setSelected(null)}
+          email={email}
+        />
+      )}
     </section>
   );
 }
